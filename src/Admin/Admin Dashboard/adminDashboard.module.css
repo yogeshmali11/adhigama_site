@@ -1,0 +1,81 @@
+.jobStuff{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.jobListings{
+    width: 65%;
+    padding-top: 20px;
+}
+h3{
+    text-align: center;
+}
+
+.addJobSection{
+    padding-top: 20px;
+    width: 30%;
+    height: 300px;
+    border-radius: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    text-align: center;
+}
+.listingsStuff{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 20px 5px;
+}
+.jobDesc{
+    width: 70%;
+}
+.btn{
+    border: none;
+    margin-right: 20px;
+    padding: 6px 14px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+}
+.inputField{
+    width: 90%;
+    margin: 10px;
+    padding: 8px 12px;
+}
+.queryContainer{
+    margin-top: 40px;
+    padding: 30px;
+}
+.queryDesc{
+    padding: 20px;
+}
+
+
+@media (max-width: 600px) {
+    .jobStuff{
+        display: block;
+    }
+    .jobListings{
+        width: 100%;
+    }
+    .addJobSection{
+        width: 100%;
+    }
+    .listingsStuff{
+        display: block;
+        text-align: center;
+    }
+    .jobDesc{
+        width: 100%;
+    }
+    .queryContainer{
+        margin-top: 10px;
+        padding: 10px;
+    }
+    .queryDesc{
+        padding: 10px;
+    }
+}

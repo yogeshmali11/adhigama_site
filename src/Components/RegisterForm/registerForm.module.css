@@ -1,0 +1,25 @@
+.formContainer{
+    width: 40%;
+    margin: 10px auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    border-radius: 8px;
+}
+.formContainer input{
+    border: 1px solid gray;
+}
+
+.formContainer button{
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+@media (max-width: 600px) {
+    .formContainer{
+        width: 95%;
+        padding: 10px;
+        border-radius: 8px;
+    }
+}

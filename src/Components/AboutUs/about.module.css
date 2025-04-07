@@ -1,0 +1,41 @@
+.bgContainer{
+    background: #DAE2F8; 
+background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8); 
+background: linear-gradient(to right, #D6A4A4, #DAE2F8); 
+
+}
+.main{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70vh;
+}
+
+.aboutImg{
+    width: 40%;
+}
+.aboutImg img{
+    width: 100%;
+    border-radius: 8px;
+}
+.aboutDesc{
+    width: 55%;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .main {
+        display: block;
+        height: auto;
+    }
+    .aboutImg{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .aboutDesc{
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,66 @@
+.bgContainer{
+    background: #2C3E50;
+    background: -webkit-linear-gradient(to right, #FD746C, #2C3E50);
+    background: linear-gradient(to right, #FD746C, #2C3E50); 
+    height: 100vh;
+}
+.formContainer{
+    width: 30%;
+    margin: 80px auto;
+    padding: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.formContainer input{
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: transparent;
+}
+.formContainer input::placeholder{
+    color: gray;
+}
+.formContainer button{
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+}
+.errorDiv {
+    text-align: center;
+}
+
+.errorDiv p {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    /* background-color: #ffe6e6; Light red background */
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid red;
+    display: inline-block;
+}
+
+@media (max-width: 600px) {
+    .formContainer{
+        width: 100%;
+        margin: 150px auto;
+        padding: 50px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .formContainer input{
+        width: 100%;
+        border: 1px solid gray;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .formContainer input::placeholder{
+        color: gray;
+    }
+    .formContainer button{
+        width: 100%;
+    }
+}

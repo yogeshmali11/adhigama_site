@@ -1,0 +1,110 @@
+.bgContainer{
+    background: #2C3E50; 
+    background: -webkit-linear-gradient(to right, #FD746C, #2C3E50); 
+    background: linear-gradient(to right, #FD746C, #2C3E50);
+    
+}
+.main{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    height: 70vh;
+}
+.desc{
+    width: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contactForm{
+    height: auto;
+    width: 35%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+/* input{
+    width: 80%;
+    height: 30px;
+    font-size: 16px;
+    padding: 0px 10px;
+    background-color: transparent;
+}
+textarea{
+    width: 80%;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    background-color: transparent;
+} */
+.inputField, textarea {
+    width: 90%;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+}
+.inputField::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+label{
+    display: block;
+    margin: 10px;
+}
+
+/* button{
+    width: 40%;
+    font-size: 18px;
+    padding: 8px 13px;
+    border-radius: 8px;
+    border: 2px solid gray;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+} */
+.btn {
+    width: 50%;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 2px solid black;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .contactForm {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .btn {
+        width: 100%;
+    }
+    .main{
+        display:block;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .desc{
+        width: 90%;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .contactForm{
+        height: auto;
+        margin-top: 10px;
+        width: 90%;
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+}

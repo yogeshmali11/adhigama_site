@@ -1,0 +1,11 @@
+.mainContainer{
+    scroll-snap-type: y mandatory; /* Ensures strict snapping */
+    overflow-y: scroll; /* Enables scrolling */
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+}
+
+.mainContainer::-webkit-scrollbar {
+    width: 0px;
+}

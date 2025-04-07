@@ -1,0 +1,38 @@
+.mainContainer{
+    height: auto;
+}
+
+.jobCard{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    padding: 20px 50px;
+    margin-bottom: 50px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.btn{
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    border: 2px solid black;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+
+}
+
+@media (max-width: 600px) {
+    .jobCard{
+        display:block;
+        padding: 10px;
+        text-align: center;
+    }
+    .btn{
+        width: 100%;
+        border: 1px solid black;
+    
+    }
+}
