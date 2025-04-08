@@ -23,7 +23,7 @@ function App() {
       {path: '/about', element: <AboutUs />},
       {path: '/services', element: <OurServices />},
       {path: '/products', element: <OurProducts />},
-      {path: 'contact', element: <ContactUs />},
+      {path: '/contact', element: <ContactUs />},
       {path: '/career', element: <Career />},
       {path: '/registerForm', element: <RegisterForm />},
       {path: '/admin-login', element: <AdminLoginPage />},

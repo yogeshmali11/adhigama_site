@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Heading } from '../../styledComponents';
+import { motion } from 'framer-motion';
 import styles from '../Services/services.module.css';
 
 function OurServices() {
@@ -39,24 +40,42 @@ function OurServices() {
     <>
       <Container className={styles.bgContainer}>
         <Heading>
-          <h3>Our Services</h3>  
+          <h3>Our Services</h3>
         </Heading>
         <div className={styles.main}>
           {
-            services.map((service)=>(
-              <div key={service.id} className={styles.card}>
+            services.map((service) => (
+
+              <motion.div
+                key={service.id}
+                className={styles.card}
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                viewport={{ once: true, amount: 0.2 }}
+              >
                 <div className={styles.cardImg}>
-                  <img src={service.image } />
+                  <img src={service.image} />
                 </div>
                 <div className={styles.cardDesc}>
                   <h3>{service.name}</h3>
                   <p>{service.description}</p>
                 </div>
-              </div>
+              </motion.div>
+
+              // <div key={service.id} className={styles.card}>
+              //   <div className={styles.cardImg}>
+              //     <img src={service.image } />
+              //   </div>
+              //   <div className={styles.cardDesc}>
+              //     <h3>{service.name}</h3>
+              //     <p>{service.description}</p>
+              //   </div>
+              // </div>
             ))
           }
-        </div> 
-      </Container> 
+        </div>
+      </Container>
     </>
   )
 }

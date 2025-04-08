@@ -1,7 +1,8 @@
 .bgContainer{
-    background: #2C3E50;
+    /* background: #2C3E50;
     background: -webkit-linear-gradient(to right, #FD746C, #2C3E50);
-    background: linear-gradient(to right, #FD746C, #2C3E50); 
+    background: linear-gradient(to right, #FD746C, #2C3E50);  */
+    background-color: rgb(236, 236, 236);
     height: 100vh;
 }
 .formContainer{

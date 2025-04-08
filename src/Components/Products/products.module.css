@@ -1,8 +1,8 @@
 .bgContainer{
-    background: #E8CBC0;
+    /* background: #E8CBC0;
 background: -webkit-linear-gradient(to right, #636FA4, #E8CBC0);
-background: linear-gradient(to right, #636FA4, #E8CBC0); 
-
+background: linear-gradient(to right, #636FA4, #E8CBC0);  */
+background-color: #e0eef9;
 }
 .main{
     display: grid;
@@ -10,7 +10,7 @@ background: linear-gradient(to right, #636FA4, #E8CBC0);
     gap: 20px;
     justify-content: center; 
     align-items: center;
-    height: 70vh;
+    height: auto;
 }
 
 .card{
@@ -27,9 +27,14 @@ background: linear-gradient(to right, #636FA4, #E8CBC0);
 .cardImg img {
     width: 100%;
     border-radius: 8px;
-    height: auto;
+    height: 300px;
     object-fit: cover;
+  object-position: top;
+  transition: object-position 0.5s ease;
 }
+.cardImg:hover img {
+    object-position: bottom;
+  }
 .cardDesc {
     padding: 15px;
     text-align: center;
@@ -40,11 +45,15 @@ background: linear-gradient(to right, #636FA4, #E8CBC0);
     margin-bottom: 10px;
     font-weight: bold;
 }
-  
-.cardDesc p {
-    font-size: 1rem;
-    color: #666;
-    line-height: 1.5;
+
+.cardDesc button{
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    padding: 6px 14px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
 }
 
 @media (max-width: 600px) {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Heading } from '../../styledComponents';
+import { motion } from 'framer-motion';
 import styles from '../Career/career.module.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { collection, getDocs } from 'firebase/firestore';
@@ -28,7 +29,14 @@ function Career() {
         </Heading>
         {
           jobs.map((job, index) => (
-            <div key={index} className={styles.jobCard}>
+            <motion.div
+              key={index}
+              className={styles.jobCard}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
               <div className={styles.jobDesc}>
                 <h2>{job.role}</h2>
                 <p>{job.desc}</p>
@@ -36,7 +44,7 @@ function Career() {
               <div>
                 <button className={styles.btn} onClick={() => handleApplyClick(job)}>Apply Here!!</button>
               </div>
-            </div>
+            </motion.div>
           ))
         }
       </Container>

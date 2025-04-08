@@ -1,7 +1,9 @@
 /* Navbar Styles */
 .navbar {
     height: 60px;
-    background: linear-gradient(to right, #FD746C, #2C3E50);
+    /* background: linear-gradient(to right, #FD746C, #2C3E50); */
+    background-color: rgb(236, 236, 236);
+    color: #333;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,7 +11,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 }
 
 /* Logo */
@@ -31,7 +33,7 @@
 }
 
 .links:hover {
-    color: white;
+    color: darkgray;
     border-bottom: 1px solid gray;
 }
 

@@ -1,16 +1,38 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Heading } from '../../styledComponents';
 import styles from '../ContactUs/contact.module.css';
 import { addDoc, collection } from 'firebase/firestore';
+import { motion } from 'framer-motion';
 import moment from 'moment';
 import { db } from '../../firebaseConfig';
+import { useLocation } from 'react-router-dom';
 
 function ContactUs() {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.subject) {
+      setFormData(prev => ({
+        ...prev,
+        subject: `Want to know more about ${location.state.subject}`
+      }));
+
+      setMessagePlaceholder(
+        `Ex: Hello, my name is [Your Name]. I am working for [Institute Name] / I have a business in [Your Business Type]. I am interested in ${location.state?.subject} and would like to know more about it. Thank you!`
+      );
+    }
+  }, [location.state]);
+
   const [formData, setFormData] = useState({
     name: '',
+    phone: '',
     email: '',
+    subject: '',
     message: ''
   });
+
+  const [messagePlaceholder, setMessagePlaceholder] = useState('Enter your message..');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,11 +48,13 @@ function ContactUs() {
       });
 
       console.log("Your Query has been send successfully");
-      alert("Query send successfully!");
+      alert("Message send Successfully!!");
 
       setFormData({
         name: '',
+        phone: '',
         email: '',
+        subject: '',
         message: ''
       })
 
@@ -53,16 +77,23 @@ function ContactUs() {
   return (
     <>
       <Container className={styles.bgContainer}>
-        <Heading>
-          <h3>Contact Us</h3>
-        </Heading>
+
         <div className={styles.main}>
           <div className={styles.desc}>
+            <Heading className={styles.descHeading}>
+              <h3>Contact Us</h3>
+            </Heading>
             <h3>Having any queries??</h3>
             <p>If you are having any queries, please feel free to ask us. Our team will shortly connect to you regarding your qrery.</p>
           </div>
           <div className={styles.contactForm}>
-            <form onSubmit={handleSubmit}>
+            <motion.form
+              onSubmit={handleSubmit}
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
               <div>
                 <label htmlFor="name">Name:</label>
                 <input
@@ -73,6 +104,20 @@ function ContactUs() {
                   value={formData.name}
                   onChange={handleInputChange}
                   placeholder='Enter your name..'
+                  required
+                />
+              </div>
+
+              <div>
+                <label htmlFor="phone">Mobile Number:</label>
+                <input
+                  className={styles.inputField}
+                  type="number"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  placeholder='Enter your Mobile Number'
                   required
                 />
               </div>
@@ -92,13 +137,28 @@ function ContactUs() {
               </div>
 
               <div>
+                <label htmlFor="subject">Subject:</label>
+                <input
+                  className={styles.inputField}
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  placeholder='Enter your subject..'
+                  required
+                />
+              </div>
+
+              <div>
                 <label htmlFor="message">Message:</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  placeholder='Enter your query..'
+                  placeholder={messagePlaceholder}
+                  rows={7}
                   required
                 ></textarea>
               </div>
@@ -107,7 +167,7 @@ function ContactUs() {
                 <button className={styles.btn} type="submit">Submit</button>
               </div>
 
-            </form>
+            </motion.form>
           </div>
         </div>
       </Container>

@@ -55,7 +55,7 @@ function AdminDashboard() {
   };
 
   return (
-    <Container>
+    <Container className={styles.bgColor}>
       <Heading>
         <h3>Admin Dashboard </h3>
       </Heading>

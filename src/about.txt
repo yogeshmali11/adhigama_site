@@ -1,0 +1,2 @@
+Framer Motion is used for animations in the website..
+Firebase is used for the authentication and Database in the website..

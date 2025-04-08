@@ -1,9 +1,10 @@
-/* .bgContainer{
-     background: #A1FFCE; 
+.bgContainer{
+     /* background: #A1FFCE; 
 background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE);
-background: linear-gradient(to right, #FAFFD1, #A1FFCE); 
+background: linear-gradient(to right, #FAFFD1, #A1FFCE);  */
+background-color: #dedfe0;
 }
-*/
+
 .main{
     display: grid;
     grid-template-columns: repeat(5, 1fr); 
