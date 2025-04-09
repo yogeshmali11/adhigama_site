@@ -23,8 +23,6 @@ function LandingPage() {
           >
             Transforming Ideas into Digital Excellence! We craft cutting-edge mobile and web applications, enhance brand presence with expert social media management, empower businesses with AI-driven solutions, and provide top-tier training to shape the innovators of tomorrow.
           </motion.p>
-          {/* <h1>The <span className={styles.animate}>FUTURE</span> of <span className={styles.animate}>TECH</span>Begins here!!</h1>
-                <p>Transforming Ideas into Digital Excellence! We craft cutting-edge mobile and web applications, enhance brand presence with expert social media management, empower businesses with AI-driven solutions, and provide top-tier training to shape the innovators of tomorrow.</p> */}
         </div>
       </Container>
     </>

@@ -9,19 +9,19 @@ function OurServices() {
       id: 1,
       name: 'Social Media',
       description: 'We provide social media management services.',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNLUySSL0MHG588qk5khjvhfLsXPWnAE3h5g&s',
+      image: 'https://ursidekick.com/wp-content/uploads/2024/02/social-media-management.png',
     },
     {
       id: 2,
       name: 'Mobile Application',
       description: 'We develop mobile applications.',
-      image: 'https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149065783.jpg',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6_eWctWPqOIJwD4pbvaflpTp2wsp6tiNoJA&s',
     },
     {
       id: 3,
       name: 'Web Application',
       description: 'We build responsive web applications.',
-      image: 'https://www.milesweb.com/blog/wp-content/uploads/2024/04/types-of-web-application.png',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe8VyhWu9_sm81k4hl4WIHaepH6ApV_jzRIQ&s',
     },
     {
       id: 4,
@@ -62,16 +62,6 @@ function OurServices() {
                   <p>{service.description}</p>
                 </div>
               </motion.div>
-
-              // <div key={service.id} className={styles.card}>
-              //   <div className={styles.cardImg}>
-              //     <img src={service.image } />
-              //   </div>
-              //   <div className={styles.cardDesc}>
-              //     <h3>{service.name}</h3>
-              //     <p>{service.description}</p>
-              //   </div>
-              // </div>
             ))
           }
         </div>

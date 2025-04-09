@@ -1,18 +1,18 @@
-.mainContainer{
+.mainContainer {
     height: auto;
     background: linear-gradient(to right, #e6f0fa, #f0f4f8);
 }
 
-.jobCard{
+.jobCard {
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid red; */
     padding: 20px 50px;
     margin-bottom: 50px;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
-.btn{
+
+.btn {
     width: 200px;
     font-size: 18px;
     padding: 10px;
@@ -26,14 +26,15 @@
 }
 
 @media (max-width: 600px) {
-    .jobCard{
-        display:block;
+    .jobCard {
+        display: block;
         padding: 10px;
         text-align: center;
     }
-    .btn{
+
+    .btn {
         width: 100%;
         border: 1px solid black;
-    
+
     }
 }

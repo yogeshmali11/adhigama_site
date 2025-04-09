@@ -29,13 +29,13 @@ function RegisterForm() {
         // the date is formatted using the moment package..
         const formattedDate = moment().format("DD-MM-YYYY hh:mm a");
 
-        try{
-            await addDoc(collection(db, "jobApplications"), { 
+        try {
+            await addDoc(collection(db, "jobApplications"), {
                 ...formData,
                 jobRole: job?.role || "Not specified",
                 timestamp: formattedDate
             });
-    
+
             console.log("Data successfully added to Firestore!");
             alert("Application submitted successfully!");
 
@@ -46,10 +46,10 @@ function RegisterForm() {
                 branch: "",
                 phone: ""
             })
-    
+
             navigate(-1);
 
-        }catch(error){
+        } catch (error) {
             console.error("Error adding document: ", error);
             alert("Error submitting application. Try again.");
         }
@@ -65,23 +65,23 @@ function RegisterForm() {
                     </div>
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Name</label>
-                        <input type="text" className="form-control" id="name" name="name" value={formData.name} onChange={handleChange} required/>
+                        <input type="text" className="form-control" id="name" name="name" value={formData.name} onChange={handleChange} required />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email address</label>
-                        <input type="email" className="form-control" id="email" name="email" value={formData.email} onChange={handleChange} required/>
+                        <input type="email" className="form-control" id="email" name="email" value={formData.email} onChange={handleChange} required />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="college" className="form-label">College Name</label>
-                        <input type="text" className="form-control" id="college" name="college" value={formData.college} onChange={handleChange} required/>
+                        <input type="text" className="form-control" id="college" name="college" value={formData.college} onChange={handleChange} required />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="branch" className="form-label">Education Field</label>
-                        <input type="text" className="form-control" id="branch" name="branch" value={formData.branch} onChange={handleChange} required/>
+                        <input type="text" className="form-control" id="branch" name="branch" value={formData.branch} onChange={handleChange} required />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="phone" className="form-label">Phone Number</label>
-                        <input type="number" className="form-control" id="phone" name="phone" value={formData.phone} onChange={handleChange} required/>
+                        <input type="number" className="form-control" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
                     </div>
                     <button type="submit" className="btn btn-primary">Apply for Role</button>
                 </form>

@@ -1,11 +1,8 @@
-.bgContainer{
-    /* background: #DAE2F8; 
-background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8); 
-background: linear-gradient(to right, #D6A4A4, #DAE2F8);  */
-background: linear-gradient(to right, #e6f0fa, #f0f4f8);
-
+.bgContainer {
+    background: linear-gradient(to right, #e6f0fa, #f0f4f8);
 }
-.main{
+
+.main {
     margin: 0 auto;
     width: 90%;
     display: flex;
@@ -14,14 +11,16 @@ background: linear-gradient(to right, #e6f0fa, #f0f4f8);
     height: 70vh;
 }
 
-.aboutImg{
+.aboutImg {
     width: 40%;
 }
-.aboutImg img{
+
+.aboutImg img {
     width: 100%;
     border-radius: 8px;
 }
-.aboutDesc{
+
+.aboutDesc {
     width: 55%;
     text-align: center;
 }
@@ -31,11 +30,13 @@ background: linear-gradient(to right, #e6f0fa, #f0f4f8);
         display: block;
         height: auto;
     }
-    .aboutImg{
+
+    .aboutImg {
         width: 100%;
         margin-bottom: 20px;
     }
-    .aboutDesc{
+
+    .aboutDesc {
         width: 100%;
         text-align: center;
     }

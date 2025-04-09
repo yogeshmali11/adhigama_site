@@ -1,7 +1,4 @@
 .bgContainer{
-    /* background: #2C3E50;
-    background: -webkit-linear-gradient(to right, #FD746C, #2C3E50);
-    background: linear-gradient(to right, #FD746C, #2C3E50);  */
     background-color: rgb(236, 236, 236);
     height: 100vh;
 }
@@ -38,7 +35,6 @@
     color: red;
     font-size: 18px;
     font-weight: bold;
-    /* background-color: #ffe6e6; Light red background */
     padding: 8px 15px;
     border-radius: 5px;
     border: 1px solid red;

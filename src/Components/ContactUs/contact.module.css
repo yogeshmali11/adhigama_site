@@ -1,11 +1,8 @@
-.bgContainer{
-    /* background: #2C3E50; 
-    background: -webkit-linear-gradient(to right, #FD746C, #2C3E50); 
-    background: linear-gradient(to right, #FD746C, #2C3E50); */
+.bgContainer {
     background-color: #f7f9fb;
-    
 }
-.main{
+
+.main {
     display: flex;
     justify-content: space-between;
     width: 90%;
@@ -13,8 +10,8 @@
     align-items: center;
     height: auto;
 }
-.desc{
-    /* border: 1px solid red; */
+
+.desc {
     width: 50%;
     text-align: center;
     display: flex;
@@ -22,11 +19,13 @@
     flex-direction: column;
     height: 500px;
 }
-.descHeading{
+
+.descHeading {
     width: 50% !important;
     margin-bottom: 60px !important;
 }
-.contactForm{
+
+.contactForm {
     height: auto;
     width: 35%;
     padding: 10px 20px;
@@ -34,47 +33,27 @@
     text-align: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
-/* input{
-    width: 80%;
-    height: 30px;
-    font-size: 16px;
-    padding: 0px 10px;
-    background-color: transparent;
-}
-textarea{
-    width: 80%;
-    font-size: 16px;
-    padding: 5px 10px;
-    margin-bottom: 20px;
-    background-color: transparent;
-} */
-.inputField, textarea {
+
+.inputField,
+textarea {
     width: 90%;
     font-size: 16px;
     padding: 10px;
-    /* margin-top: 5px; */
     background-color: transparent;
     border: 1px solid black;
     color: black;
 }
-.inputField::placeholder, textarea::placeholder {
+
+.inputField::placeholder,
+textarea::placeholder {
     color: lightslategray;
 }
-label{
+
+label {
     display: block;
     margin: 10px;
 }
 
-/* button{
-    width: 40%;
-    font-size: 18px;
-    padding: 8px 13px;
-    border-radius: 8px;
-    border: 2px solid gray;
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-} */
 .btn {
     width: 50%;
     font-size: 18px;
@@ -92,21 +71,25 @@ label{
         width: 100%;
         margin: 0 auto;
     }
+
     .btn {
         width: 100%;
     }
-    .main{
-        display:block;
+
+    .main {
+        display: block;
         width: 90%;
         margin: 0 auto;
     }
-    .desc{
+
+    .desc {
         width: 90%;
         text-align: center;
         margin: 0 auto;
         height: auto;
     }
-    .contactForm{
+
+    .contactForm {
         height: auto;
         margin-top: 10px;
         margin-bottom: 20px;

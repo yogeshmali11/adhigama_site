@@ -64,15 +64,6 @@ function OurProducts() {
                   <button onClick={() => handleContactClick(product.name)}>Contact Us</button>
                 </div>
               </motion.div>
-              // <div key={product.id} className={styles.card}>
-              //   <div className={styles.cardImg}>
-              //     <img src={product.image} />
-              //   </div>
-              //   <div className={styles.cardDesc}>
-              //     <h3>{product.name}</h3>
-              //     <button onClick={() => handleContactClick(product.name)}>Contact Us</button>
-              //   </div>
-              // </div>
             ))
           }
         </div>

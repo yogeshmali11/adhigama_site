@@ -12,8 +12,6 @@ export const Container = styled.div`
     }
 `;
 
-
-
 export const Heading = styled.div`
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
