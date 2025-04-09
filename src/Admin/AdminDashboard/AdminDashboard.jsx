@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styles from '../Admin Dashboard/AdminDashboard.module.css'
+import styles from './AdminDashboard.module.css'
 import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from 'firebase/firestore';
 import { db } from '../../firebaseConfig';
 import { Container, Heading } from '../../styledComponents';

@@ -10,8 +10,8 @@ import Career from './Components/Career/Career';
 import Navbar from './Components/Navbar/Navbar';
 import './App.css'
 import RegisterForm from './Components/RegisterForm/RegisterForm';
-import AdminLoginPage from './Admin/Admin Login/AdminLoginPage';
-import AdminDashboard from './Admin/Admin Dashboard/AdminDashboard';
+import AdminLoginPage from './Admin/AdminLogin/AdminLoginPage';
+import AdminDashboard from './Admin/AdminDashboard/AdminDashboard';
 import ProtectedRoute from './Admin/ProtectedRoute';
 
 
