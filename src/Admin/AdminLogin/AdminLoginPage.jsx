@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from './AdminLoginPage.module.css'
+import styles from '../AdminLogin/adminLoginPage.module.css';
 import { Container, Heading } from '../../styledComponents';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
