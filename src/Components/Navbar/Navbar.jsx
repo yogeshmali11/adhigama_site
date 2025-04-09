@@ -4,6 +4,7 @@ import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { FiMenu, FiX } from "react-icons/fi";
 import { getAuth, signOut } from 'firebase/auth';
 import { app } from '../../firebaseConfig';
+import logo from '../../assets/logo.png'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ function Navbar() {
       <nav className={styles.navbar}>
         <div className={styles.logoContainer}>
           <Link to="/">
-            <img className={styles.logo} src='src\assets\logo.png' width='200px' alt="Logo" />
+            <img className={styles.logo} src={logo} width='200px' alt="Logo" />
           </Link>
         </div>
 
