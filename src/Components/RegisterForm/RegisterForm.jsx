@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../RegisterForm/RegisterForm.module.css';
+import styles from '../RegisterForm/registerForm.module.css';
 import { Container, Heading } from '../../styledComponents';
 import { useLocation, useNavigate } from 'react-router-dom';
 import moment from 'moment';
