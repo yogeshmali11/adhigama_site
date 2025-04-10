@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, Heading } from '../../styledComponents';
 import { motion } from 'framer-motion';
 import styles from '../Products/products.module.css';
@@ -11,6 +11,21 @@ import image4 from '../../assets/educational-software.jpg';
 function OurProducts() {
 
   const navigate = useNavigate();
+
+  // used for making the site SEO friendly..
+  useEffect(() => {
+    document.title = "Our Products | Adhigama Tech";
+
+    const description = document.querySelector("meta[name='description']");
+    if (description) {
+      description.setAttribute("content", "Explore our top products like ERP systems, CRM, billing software, and educational tools.");
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = "Explore our top products like ERP systems, CRM, billing software, and educational tools.";
+      document.head.appendChild(meta);
+    }
+  }, []);
 
   const handleContactClick = (productName) => {
     navigate('/contact', { state: { subject: productName } });

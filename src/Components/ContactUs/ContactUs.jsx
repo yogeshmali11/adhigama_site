@@ -11,6 +11,21 @@ function ContactUs() {
 
   const location = useLocation();
 
+  // used for making the site SEO friendly..
+  useEffect(() => {
+    document.title = "Contact Us | Adhigama Tech";
+  
+    const description = document.querySelector("meta[name='description']");
+    if (description) {
+      description.setAttribute("content", "Have questions? Contact Adhigama Tech for ERP solutions, CRM systems, or digital products. We’re happy to help!");
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = "Have questions? Contact Adhigama Tech for ERP solutions, CRM systems, or digital products. We’re happy to help!";
+      document.head.appendChild(meta);
+    }
+  }, []);
+
   useEffect(() => {
     if (location.state?.subject) {
       setFormData(prev => ({

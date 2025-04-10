@@ -2,8 +2,25 @@ import React from 'react'
 import { Container, Heading } from '../../styledComponents';
 import { motion } from 'framer-motion';
 import styles from '../AboutUs/about.module.css'
+import {useEffect} from 'react';
+import aboutImage from '../../assets/aboutImage.webp';
 
 function AboutUs() {
+
+  // used for making the site SEO friendly..
+  useEffect(() => {
+    document.title = "About Us | Adhigama Tech";
+
+    const description = document.querySelector("meta[name='description']");
+    if (description) {
+      description.setAttribute("content", "Learn about Adhigama Tech – a top Indian tech company offering ERP, CRM, and custom software solutions.");
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = "Learn about Adhigama Tech – a top Indian tech company offering ERP, CRM, and custom software solutions.";
+      document.head.appendChild(meta);
+    }
+  }, []);
   return (
     <>
       <Container className={styles.bgContainer}>
@@ -25,7 +42,7 @@ function AboutUs() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <img src='https://www.shutterstock.com/image-photo/why-choose-us-businessman-holding-600nw-1431803342.jpg' />
+            <img src={aboutImage}/>
           </motion.div>
 
           <motion.div

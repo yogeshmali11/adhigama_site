@@ -1,39 +1,60 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, Heading } from '../../styledComponents';
 import { motion } from 'framer-motion';
 import styles from '../Services/services.module.css';
+import serviceImage1 from '../../assets/serviceImage1.png';
+import serviceImage2 from '../../assets/serviceImage2.jpg';
+import serviceImage3 from '../../assets/serviceImage3.jpg';
+import serviceImage4 from '../../assets/serviceImage4.jpg';
+import serviceImage5 from '../../assets/serviceImage5.webp';
 
 function OurServices() {
+
+  // used for making the site SEO friendly..
+  useEffect(() => {
+    document.title = "Our Services | Adhigama Tech";
+
+    const description = document.querySelector("meta[name='description']");
+    if (description) {
+      description.setAttribute("content", "Explore the digital services offered by Adhigama Tech including AI, Web, Mobile, and more.");
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = "Explore the digital services offered by Adhigama Tech including AI, Web, Mobile, and more.";
+      document.head.appendChild(meta);
+    }
+  }, []);
+
   const services = [
     {
       id: 1,
       name: 'Social Media',
       description: 'We provide social media management services.',
-      image: 'https://ursidekick.com/wp-content/uploads/2024/02/social-media-management.png',
+      image: serviceImage1,
     },
     {
       id: 2,
       name: 'Mobile Application',
       description: 'We develop mobile applications.',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6_eWctWPqOIJwD4pbvaflpTp2wsp6tiNoJA&s',
+      image: serviceImage2,
     },
     {
       id: 3,
       name: 'Web Application',
       description: 'We build responsive web applications.',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe8VyhWu9_sm81k4hl4WIHaepH6ApV_jzRIQ&s',
+      image: serviceImage3,
     },
     {
       id: 4,
       name: 'AI Services',
       description: 'We provide AI-powered solutions for businesses.',
-      image: 'https://assets.aboutamazon.com/dims4/default/e73bc85/2147483647/strip/true/crop/4093x2304+7+0/resize/1240x698!/quality/90/?url=https%3A%2F%2Famazon-blogs-brightspot.s3.amazonaws.com%2F36%2F59%2Feba4adcc4f88a972b5639ed1dde0%2Fadobestock-712831308.jpeg',
+      image: serviceImage4,
     },
     {
       id: 5,
       name: 'Training',
       description: 'We offer training in various technical fields.',
-      image: 'https://cdn.corporatefinanceinstitute.com/assets/team-training.jpeg',
+      image: serviceImage5,
     },
   ];
   return (

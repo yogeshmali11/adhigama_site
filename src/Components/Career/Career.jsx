@@ -10,6 +10,21 @@ function Career() {
   const navigate = useNavigate();
   const [jobs, setJobs] = useState([]);
 
+  // used for making the site SEO friendly..
+  useEffect(() => {
+    document.title = "Careers | Join Our Team | Adhigama Tech";
+
+    const description = document.querySelector("meta[name='description']");
+    if (description) {
+      description.setAttribute("content", "Explore exciting job openings at Adhigama Tech. Join our team of innovators and grow your career in tech.");
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = "Explore exciting job openings at Adhigama Tech. Join our team of innovators and grow your career in tech.";
+      document.head.appendChild(meta);
+    }
+  }, []);
+
   useEffect(() => {
     const fetchData = async () => {
       const jobsCollection = await getDocs(collection(db, "jobs"));

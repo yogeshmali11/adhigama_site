@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../RegisterForm/registerForm.module.css';
 import { Container, Heading } from '../../styledComponents';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -10,6 +10,21 @@ function RegisterForm() {
     const location = useLocation();
     const job = location.state?.job;
     const navigate = useNavigate();
+
+    // used for making the site SEO friendly..
+    useEffect(() => {
+        document.title = "Apply for Job | Adhigama Tech";
+    
+        const description = document.querySelector("meta[name='description']");
+        if (description) {
+            description.setAttribute("content", "Fill out the job application form to apply at Adhigama Tech.");
+        } else {
+            const meta = document.createElement("meta");
+            meta.name = "description";
+            meta.content = "Fill out the job application form to apply at Adhigama Tech.";
+            document.head.appendChild(meta);
+        }
+    }, []);
 
     const [formData, setFormData] = useState({
         name: "",

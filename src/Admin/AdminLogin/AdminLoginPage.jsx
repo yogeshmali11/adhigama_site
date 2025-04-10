@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../AdminLogin/adminLoginPage.module.css';
 import { Container, Heading } from '../../styledComponents';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -11,6 +11,21 @@ function AdminLoginPage() {
     const [error, setError] = useState("");
     const navigate = useNavigate();
     const auth = getAuth(app);
+
+    // used for making the site SEO friendly..
+    useEffect(() => {
+        document.title = "Admin Login | Adhigama Tech";
+      
+        const description = document.querySelector("meta[name='description']");
+        if (description) {
+          description.setAttribute("content", "Secure Admin Login page for Adhigama Tech. Login to manage jobs and queries.");
+        } else {
+          const meta = document.createElement("meta");
+          meta.name = "description";
+          meta.content = "Secure Admin Login page for Adhigama Tech. Login to manage jobs and queries.";
+          document.head.appendChild(meta);
+        }
+      }, []);
 
     const handleLogin = async (e) => {
         e.preventDefault();

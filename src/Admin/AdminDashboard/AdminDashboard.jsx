@@ -10,6 +10,21 @@ function AdminDashboard() {
   const [newJob, setNewJob] = useState({ role: '', desc: '' });
   const [editingJob, setEditingJob] = useState(null); // Track which job is being edited
 
+  // used for making the site SEO friendly..
+  useEffect(() => {
+    document.title = "Admin Dashboard | Adhigama Tech";
+  
+    const description = document.querySelector("meta[name='description']");
+    if (description) {
+      description.setAttribute("content", "Manage job listings and user queries from the Admin Dashboard at Adhigama Tech.");
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = "Manage job listings and user queries from the Admin Dashboard at Adhigama Tech.";
+      document.head.appendChild(meta);
+    }
+  }, []);
+
   // Fetch jobs and queries from Firestore
   useEffect(() => {
     const fetchData = async () => {

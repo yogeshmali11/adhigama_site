@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, Heading } from '../../styledComponents';
 import { motion } from 'framer-motion';
 import styles from '../LandingPage/landingPage.module.css'
 
 function LandingPage() {
+
+  // used for making the site SEO friendly..
+  useEffect(() => {
+    document.title = "Adhigama Tech | Future of Tech Starts Here";
+
+    const description = document.querySelector("meta[name='description']");
+    if (description) {
+      description.setAttribute("content", "Transforming ideas into digital excellence - AI, mobile apps, web development, training, and more.");
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = "Transforming ideas into digital excellence - AI, mobile apps, web development, training, and more.";
+      document.head.appendChild(meta);
+    }
+  }, []);
   return (
     <>
       <Container className={styles.bgContainer}>
