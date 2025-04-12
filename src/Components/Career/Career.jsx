@@ -5,25 +5,11 @@ import styles from '../Career/career.module.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebaseConfig';
+import { Helmet } from 'react-helmet-async';
 
 function Career() {
   const navigate = useNavigate();
   const [jobs, setJobs] = useState([]);
-
-  // used for making the site SEO friendly..
-  useEffect(() => {
-    document.title = "Careers | Join Our Team | Adhigama Tech";
-
-    const description = document.querySelector("meta[name='description']");
-    if (description) {
-      description.setAttribute("content", "Explore exciting job openings at Adhigama Tech. Join our team of innovators and grow your career in tech.");
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = "Explore exciting job openings at Adhigama Tech. Join our team of innovators and grow your career in tech.";
-      document.head.appendChild(meta);
-    }
-  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,6 +24,14 @@ function Career() {
   };
   return (
     <>
+      <Helmet>
+        <title>Careers | Join Our Team | Adhigama Tech</title>
+        <meta name="description" content="Explore exciting job openings at Adhigama Tech. Join our team of innovators and grow your career in tech." />
+        <meta name="keywords" content="careers, jobs, tech jobs, Adhigama Tech, join our team, software jobs, India tech company" />
+        <meta property="og:title" content="Careers | Join Our Team | Adhigama Tech" />
+        <meta property="og:description" content="Explore exciting job openings at Adhigama Tech. Join our team of innovators and grow your career in tech." />
+        <meta property="og:url" content="https://adhigama.in/career" />
+      </Helmet>
       <Container className={styles.mainContainer}>
         <Heading>
           <h3>We are Hiring!!</h3>

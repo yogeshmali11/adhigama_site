@@ -6,25 +6,11 @@ import { motion } from 'framer-motion';
 import moment from 'moment';
 import { db } from '../../firebaseConfig';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 function ContactUs() {
 
   const location = useLocation();
-
-  // used for making the site SEO friendly..
-  useEffect(() => {
-    document.title = "Contact Us | Adhigama Tech";
-  
-    const description = document.querySelector("meta[name='description']");
-    if (description) {
-      description.setAttribute("content", "Have questions? Contact Adhigama Tech for ERP solutions, CRM systems, or digital products. We’re happy to help!");
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = "Have questions? Contact Adhigama Tech for ERP solutions, CRM systems, or digital products. We’re happy to help!";
-      document.head.appendChild(meta);
-    }
-  }, []);
 
   useEffect(() => {
     if (location.state?.subject) {
@@ -91,6 +77,14 @@ function ContactUs() {
 
   return (
     <>
+      <Helmet>
+        <title>Contact Us | Adhigama Tech</title>
+        <meta name="description" content="Have questions? Contact Adhigama Tech for ERP solutions, CRM systems, or digital products. We’re happy to help!" />
+        <meta name="keywords" content="contact us, contact, Adhigama Tech, ERP solutions, CRM systems, digital products, customer support" />
+        <meta property="og:title" content="Contact Us | Adhigama Tech" />
+        <meta property="og:description" content="Have questions? Contact Adhigama Tech for ERP solutions, CRM systems, or digital products. We’re happy to help!" />
+        <meta property="og:url" content="https://adhigama.in/contact" />
+      </Helmet>
       <Container className={styles.bgContainer}>
 
         <div className={styles.main}>

@@ -5,26 +5,12 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import moment from 'moment';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../../firebaseConfig';
+import { Helmet } from 'react-helmet-async';
 
 function RegisterForm() {
     const location = useLocation();
     const job = location.state?.job;
     const navigate = useNavigate();
-
-    // used for making the site SEO friendly..
-    useEffect(() => {
-        document.title = "Apply for Job | Adhigama Tech";
-    
-        const description = document.querySelector("meta[name='description']");
-        if (description) {
-            description.setAttribute("content", "Fill out the job application form to apply at Adhigama Tech.");
-        } else {
-            const meta = document.createElement("meta");
-            meta.name = "description";
-            meta.content = "Fill out the job application form to apply at Adhigama Tech.";
-            document.head.appendChild(meta);
-        }
-    }, []);
 
     const [formData, setFormData] = useState({
         name: "",
@@ -71,37 +57,44 @@ function RegisterForm() {
     };
 
     return (
-        <Container className={styles.mainContainer}>
-            <div className={styles.formContainer}>
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label htmlFor="jobRole" className="form-label">Job Role</label>
-                        <input type="text" value={job?.role || ""} className="form-control" id="jobRole" disabled />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="name" className="form-label">Name</label>
-                        <input type="text" className="form-control" id="name" name="name" value={formData.name} onChange={handleChange} required />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="email" className="form-label">Email address</label>
-                        <input type="email" className="form-control" id="email" name="email" value={formData.email} onChange={handleChange} required />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="college" className="form-label">College Name</label>
-                        <input type="text" className="form-control" id="college" name="college" value={formData.college} onChange={handleChange} required />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="branch" className="form-label">Education Field</label>
-                        <input type="text" className="form-control" id="branch" name="branch" value={formData.branch} onChange={handleChange} required />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="phone" className="form-label">Phone Number</label>
-                        <input type="number" className="form-control" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
-                    </div>
-                    <button type="submit" className="btn btn-primary">Apply for Role</button>
-                </form>
-            </div>
-        </Container>
+        <>
+            <Helmet>
+                <title>Apply for Job | Adhigama Tech</title>
+                <meta name="description" content="Fill out the job application form to apply at Adhigama Tech." />
+                <meta name="keywords" content="Adhigama Tech, job application, career, apply for job, job openings" />
+            </Helmet>
+            <Container className={styles.mainContainer}>
+                <div className={styles.formContainer}>
+                    <form onSubmit={handleSubmit}>
+                        <div className="mb-3">
+                            <label htmlFor="jobRole" className="form-label">Job Role</label>
+                            <input type="text" value={job?.role || ""} className="form-control" id="jobRole" disabled />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="name" className="form-label">Name</label>
+                            <input type="text" className="form-control" id="name" name="name" value={formData.name} onChange={handleChange} required />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="email" className="form-label">Email address</label>
+                            <input type="email" className="form-control" id="email" name="email" value={formData.email} onChange={handleChange} required />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="college" className="form-label">College Name</label>
+                            <input type="text" className="form-control" id="college" name="college" value={formData.college} onChange={handleChange} required />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="branch" className="form-label">Education Field</label>
+                            <input type="text" className="form-control" id="branch" name="branch" value={formData.branch} onChange={handleChange} required />
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="phone" className="form-label">Phone Number</label>
+                            <input type="number" className="form-control" id="phone" name="phone" value={formData.phone} onChange={handleChange} required />
+                        </div>
+                        <button type="submit" className="btn btn-primary">Apply for Role</button>
+                    </form>
+                </div>
+            </Container>
+        </>
     );
 }
 

@@ -2,27 +2,24 @@ import React from 'react'
 import { Container, Heading } from '../../styledComponents';
 import { motion } from 'framer-motion';
 import styles from '../AboutUs/about.module.css'
-import {useEffect} from 'react';
 import aboutImage from '../../assets/aboutImage.webp';
+import { Helmet } from 'react-helmet-async';
 
 function AboutUs() {
-
-  // used for making the site SEO friendly..
-  useEffect(() => {
-    document.title = "About Us | Adhigama Tech";
-
-    const description = document.querySelector("meta[name='description']");
-    if (description) {
-      description.setAttribute("content", "Learn about Adhigama Tech – a top Indian tech company offering ERP, CRM, and custom software solutions.");
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = "Learn about Adhigama Tech – a top Indian tech company offering ERP, CRM, and custom software solutions.";
-      document.head.appendChild(meta);
-    }
-  }, []);
   return (
     <>
+      <Helmet>
+        {/* SEO Tags */}
+        <title>About Us | Adhigama Tech</title>
+        <meta name="description" content="Learn about Adhigama Tech – a top Indian tech company offering ERP, CRM, and custom software solutions." />
+        <meta name="keywords" content="Adhigama Tech, ERP solutions, CRM development, tech startup, custom software, digital transformation, India" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="About Us | Adhigama Tech" />
+        <meta property="og:description" content="Learn about Adhigama Tech – a top Indian tech company offering ERP, CRM, and custom software solutions." />
+        <meta property="og:image" content={aboutImage} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://adhigama.in/about" />
+      </Helmet>
       <Container className={styles.bgContainer}>
         <Heading>
           <h3>About Us</h3>
@@ -42,7 +39,7 @@ function AboutUs() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
             viewport={{ once: true }}
           >
-            <img src={aboutImage}/>
+            <img src={aboutImage} />
           </motion.div>
 
           <motion.div

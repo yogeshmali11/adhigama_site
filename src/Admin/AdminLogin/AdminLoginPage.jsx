@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from '../AdminLogin/adminLoginPage.module.css';
 import { Container, Heading } from '../../styledComponents';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { app } from '../../firebaseConfig';
+import { Helmet } from 'react-helmet-async';
 
 function AdminLoginPage() {
     const [email, setEmail] = useState("");
@@ -11,21 +12,6 @@ function AdminLoginPage() {
     const [error, setError] = useState("");
     const navigate = useNavigate();
     const auth = getAuth(app);
-
-    // used for making the site SEO friendly..
-    useEffect(() => {
-        document.title = "Admin Login | Adhigama Tech";
-      
-        const description = document.querySelector("meta[name='description']");
-        if (description) {
-          description.setAttribute("content", "Secure Admin Login page for Adhigama Tech. Login to manage jobs and queries.");
-        } else {
-          const meta = document.createElement("meta");
-          meta.name = "description";
-          meta.content = "Secure Admin Login page for Adhigama Tech. Login to manage jobs and queries.";
-          document.head.appendChild(meta);
-        }
-      }, []);
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -40,6 +26,14 @@ function AdminLoginPage() {
     }
     return (
         <>
+            <Helmet>
+                <title>Admin Login | Adhigama Tech</title>
+                <meta name="description" content="Secure Admin Login page for Adhigama Tech. Login to manage jobs and queries." />
+                <meta name="keywords" content="admin login, secure login, Adhigama Tech, manage jobs, admin access" />
+                <meta property="og:title" content="Admin Login | Adhigama Tech" />
+                <meta property="og:description" content="Secure Admin Login page for Adhigama Tech. Login to manage jobs and queries." />
+                <meta property="og:url" content="https://adhigama.in/admin-login" />
+            </Helmet>
             <Container className={styles.bgContainer}>
                 <Heading>
                     <h3>Admin Login</h3>
@@ -50,7 +44,7 @@ function AdminLoginPage() {
                 <div className={styles.formContainer}>
                     <form onSubmit={handleLogin}>
                         <input type="email" onChange={(e) => setEmail(e.target.value)} value={email} required placeholder='Enter your email' />
-                        <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} placeholder='Enter your password' required  />
+                        <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} placeholder='Enter your password' required />
 
                         <button type="submit">Login</button>
                     </form>

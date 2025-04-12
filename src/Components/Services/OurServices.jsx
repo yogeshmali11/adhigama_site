@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Container, Heading } from '../../styledComponents';
 import { motion } from 'framer-motion';
 import styles from '../Services/services.module.css';
@@ -7,23 +7,9 @@ import serviceImage2 from '../../assets/serviceImage2.jpg';
 import serviceImage3 from '../../assets/serviceImage3.jpg';
 import serviceImage4 from '../../assets/serviceImage4.jpg';
 import serviceImage5 from '../../assets/serviceImage5.webp';
+import { Helmet } from 'react-helmet-async';
 
 function OurServices() {
-
-  // used for making the site SEO friendly..
-  useEffect(() => {
-    document.title = "Our Services | Adhigama Tech";
-
-    const description = document.querySelector("meta[name='description']");
-    if (description) {
-      description.setAttribute("content", "Explore the digital services offered by Adhigama Tech including AI, Web, Mobile, and more.");
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = "Explore the digital services offered by Adhigama Tech including AI, Web, Mobile, and more.";
-      document.head.appendChild(meta);
-    }
-  }, []);
 
   const services = [
     {
@@ -59,6 +45,19 @@ function OurServices() {
   ];
   return (
     <>
+      <Helmet>
+        <title>Our Products | Adhigama Tech</title>
+        <meta name="description" content="Explore our top products like ERP systems, CRM, billing software, and educational tools." />
+        <meta name="keywords" content="Adhigama Tech, ERP system, CRM, billing software, educational tools, school ERP system, software products" />
+        <meta property="og:title" content="Our Products | Adhigama Tech" />
+        <meta property="og:description" content="Explore our top products like ERP systems, CRM, billing software, and educational tools." />
+        <meta property="og:image" content={serviceImage1} />
+        <meta property="og:image" content={serviceImage2} />
+        <meta property="og:image" content={serviceImage3} />
+        <meta property="og:image" content={serviceImage4} />
+        <meta property="og:image" content={serviceImage5} />
+        <meta property="og:url" content="https://adhigama.in/products" />
+      </Helmet>
       <Container className={styles.bgContainer}>
         <Heading>
           <h3>Our Services</h3>

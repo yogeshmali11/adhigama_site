@@ -13,6 +13,7 @@ import RegisterForm from './Components/RegisterForm/RegisterForm';
 import AdminLoginPage from './Admin/AdminLogin/AdminLoginPage';
 import AdminDashboard from './Admin/AdminDashboard/AdminDashboard';
 import ProtectedRoute from './Admin/ProtectedRoute';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 function App() {
@@ -34,7 +35,9 @@ function App() {
   ]);
   return (
     <>
-      <RouterProvider router={router} />
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
     </>
   )
 }

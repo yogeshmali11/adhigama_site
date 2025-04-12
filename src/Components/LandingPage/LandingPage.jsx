@@ -1,26 +1,20 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Container, Heading } from '../../styledComponents';
 import { motion } from 'framer-motion';
 import styles from '../LandingPage/landingPage.module.css'
+import { Helmet } from 'react-helmet-async';
 
 function LandingPage() {
-
-  // used for making the site SEO friendly..
-  useEffect(() => {
-    document.title = "Adhigama Tech | Future of Tech Starts Here";
-
-    const description = document.querySelector("meta[name='description']");
-    if (description) {
-      description.setAttribute("content", "Transforming ideas into digital excellence - AI, mobile apps, web development, training, and more.");
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = "Transforming ideas into digital excellence - AI, mobile apps, web development, training, and more.";
-      document.head.appendChild(meta);
-    }
-  }, []);
   return (
     <>
+      <Helmet>
+        <title>Adhigama Tech | Future of Tech Starts Here</title>
+        <meta name="description" content="Transforming ideas into digital excellence - AI, mobile apps, web development, training, and more." />
+        <meta name="keywords" content="Adhigama Tech, mobile apps, web development, AI solutions, tech innovation, social media management, training, digital excellence" />
+        <meta property="og:title" content="Adhigama Tech | Future of Tech Starts Here" />
+        <meta property="og:description" content="Transforming ideas into digital excellence - AI, mobile apps, web development, training, and more." />
+        <meta property="og:url" content="https://adhigama.in/" />
+      </Helmet>
       <Container className={styles.bgContainer}>
         <div className={styles.stuff}>
           <motion.h1
