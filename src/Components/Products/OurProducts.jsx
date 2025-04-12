@@ -55,7 +55,7 @@ function OurProducts() {
       </Helmet>
       <Container className={styles.bgContainer}>
         <Heading>
-          <h3>Our Products</h3>
+          <h1>Our Products</h1>
         </Heading>
         <div className={styles.main}>
           {

@@ -22,7 +22,7 @@ function AboutUs() {
       </Helmet>
       <Container className={styles.bgContainer}>
         <Heading>
-          <h3>About Us</h3>
+          <h1>About Us</h1>
         </Heading>
 
         <motion.div

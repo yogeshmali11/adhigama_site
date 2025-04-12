@@ -90,7 +90,7 @@ function ContactUs() {
         <div className={styles.main}>
           <div className={styles.desc}>
             <Heading className={styles.descHeading}>
-              <h3>Contact Us</h3>
+              <h1>Contact Us</h1>
             </Heading>
             <h3>Having any queries??</h3>
             <p>If you are having any queries, please feel free to ask us. Our team will shortly connect to you regarding your qrery.</p>

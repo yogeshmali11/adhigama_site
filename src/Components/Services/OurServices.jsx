@@ -60,7 +60,7 @@ function OurServices() {
       </Helmet>
       <Container className={styles.bgContainer}>
         <Heading>
-          <h3>Our Services</h3>
+          <h1>Our Services</h1>
         </Heading>
         <div className={styles.main}>
           {

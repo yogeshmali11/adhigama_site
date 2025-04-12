@@ -34,7 +34,7 @@ function Career() {
       </Helmet>
       <Container className={styles.mainContainer}>
         <Heading>
-          <h3>We are Hiring!!</h3>
+          <h1>We are Hiring!!</h1>
         </Heading>
         {
           jobs.map((job, index) => (
